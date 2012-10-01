@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/Templates/TemplatePadrao.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h1>#{msg.cadastro_titulo}</h1>
+			<hr />
+			<h:panelGrid columns="2">
+				<h:outputText></h:outputText>
+				<h:message for="nome"></h:message>
+				<h:outputText id="txNome" value="#{msg.cadastro_nome}" for="nome"></h:outputText>
+				<h:inputText id="nome" label="Nome" value="#{nomeBean.nome}"
+					required="true" requiredMessage="#{msg.cadastro_erro_nome}"></h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:message for="sobrenome"></h:message>
+				<h:outputText id="txSobrenome" value="#{msg.cadastro_sobrenome}"
+					for="sobrenome"></h:outputText>
+				<h:inputText id="sobrenome" label="Sobrenome"
+					value="#{nomeBean.sobrenome}" required="false"></h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:message for="cpf"></h:message>
+				<h:outputText id="txCpf" value="#{msg.cadastro_cpf}" for="cpf"></h:outputText>
+				<h:inputText id="cpf" label="Cpf" value="#{nomeBean.cpf}"
+					required="true" requiredMessage="#{msg.cadastro_erro_cpf}"></h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:message for="profissao"></h:message>
+				<h:outputText id="txProfissao" value="#{msg.cadastro_profissao}"
+					for="profissao"></h:outputText>
+				<h:inputText id="profissao" label="Profissao"
+					value="#{nomeBean.profissao}" required="false"></h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:message for="email"></h:message>
+				<h:outputText id="txEmail" value="#{msg.cadastro_email}" for="email"></h:outputText>
+				<h:inputText id="email" label="Email" value="#{nomeBean.email}"
+					required="false" validatorMessage="#{msg.cadastro_erro_email}">
+					<f:validateRegex
+						pattern="[a-z0-9\-\_\.]+@[a-z0-9\-\_\.]+[.]{1}[a-z]{2,3}"></f:validateRegex>
+				</h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:message for="telefone"></h:message>
+				<h:outputText id="txTelefone" value="#{msg.cadastro_telefone}"
+					for="telefone"></h:outputText>
+				<h:inputText id="telefone" label="Telefone"
+					value="#{nomeBean.telefone}" required="true"
+					validatorMessage="#{msg.cadastro_erro_telefone}">
+					<f:validateRegex pattern="[0-9\-]+[0-9\-]"></f:validateRegex>
+				</h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:message for="endereco"></h:message>
+				<h:outputText id="txEndereco" value="#{msg.cadastro_endereco}"
+					for="endereco"></h:outputText>
+				<h:inputText id="endereco" label="endereco"
+					value="#{nomeBean.endereco}" required="false"></h:inputText>
+
+				<h:outputText></h:outputText>
+				<h:commandButton value="#{msg.cadastro_salvar}"
+					action="#{nomeBean.salvar}"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>

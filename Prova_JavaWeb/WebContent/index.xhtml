@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<!-- UI = User Interface; -->
+<!-- h = html -->
+<!-- f = core do jsf; -->
+
+<ui:composition template="/Templates/TemplatePadrao.xhtml">
+	<ui:define name="content">
+		<h:form>
+		<f:view>
+			<span style="font-family: Calibri; font-size: 48px;">
+			<h:outputText value="#{msg.index_titulo}"></h:outputText>
+			</span>
+			<br />
+			<h:commandLink value="#{msg.index_cadastro}" action="usuario"></h:commandLink>
+		</f:view>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>

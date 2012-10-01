@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsp/jstl/core">
+<!-- UI = User Interface; -->
+<!-- h = html -->
+<!-- f = core do jsf; -->
+
+<ui:composition template="/Templates/TemplatePadrao.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h1>#{msg.mostra_titulo}</h1>
+			<hr />
+	#{msg.cadastro_nome}:	<h:outputText value="#{nomeBean.nome}" />
+			<br />
+	#{msg.cadastro_sobrenome}: <h:outputText value="#{nomeBean.sobrenome}" />
+			<br />
+	#{msg.cadastro_cpf}: 	<h:outputText value="#{nomeBean.cpf}" />
+			<br />
+	#{msg.cadastro_profissao}: <h:outputText value="#{nomeBean.profissao}" />
+			<br />			
+	#{msg.cadastro_email}:	<h:outputLink value="mailto:#{nomeBean.email}">
+				<h:outputText value="#{nomeBean.email}" />
+			</h:outputLink>
+			<br />
+	#{msg.cadastro_telefone}: <h:outputText value="#{nomeBean.telefone}" />
+			<br />
+	#{msg.cadastro_endereco}: <h:outputText value="#{nomeBean.endereco}" />
+			<br />
+			
+			<h:commandLink action="index">#{msg.mostra_index}</h:commandLink>
+			<hr />
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
